@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  before_action :require_login, only: %i[new create edit update destroy]
   include ArticlesHelper
 
   def index
